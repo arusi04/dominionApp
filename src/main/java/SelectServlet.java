@@ -32,7 +32,9 @@ public class SelectServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("Select.jsp");
 //		dispatcher.forward(request,response);
-		List<Card> cardList = ImportCsv.importCsvData();
+		//getRealPathの引数はプロジェクト名からの相対パス
+		String realPath = this.getServletContext().getRealPath(".\\data\\カードデータ.csv");
+		List<Card> cardList = ImportCsv.importCsvData(realPath);
 		for(Card card : cardList) {
 			System.out.println(card.getName() + "  " + card.getCost());
 			

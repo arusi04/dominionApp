@@ -7,13 +7,13 @@ import java.util.List;
 public class ImportCsv {
 	 // CSVファイルを読み込み1行ずつ出力
 	
-	  ;
-	  public static List<Card> importCsvData() {
+	  public static List<Card> importCsvData(String path) {
 	  List<Card> cardList = new ArrayList<Card>();
 	  BufferedReader br = null;
-	  String file_name = "C:\\Users\\PC_User\\Desktop\\pleiades-2021-03-java-win-64bit-jre_20210328\\pleiades\\workspace\\dominionApp\\src\\main\\webapp\\data\\カードデータ.csv"; // 入力ファイル
+	  String file_name = path; //入力ファイル
 	  try {
 	  File file = new File(file_name);
+	  
 	  br = new BufferedReader(new FileReader(file));
 	  // readLineで一行ずつ読み込む
 	  String line; // 読み込み行
